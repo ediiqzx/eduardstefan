@@ -1,0 +1,169 @@
+/*
+* Eduard Stefan Template
+* Copyright 2017
+* www.eduardstefan.com
+*/
+
+$brand: #00FF8F;
+
+/* Base Things
+------------------------------ */
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+img { border: 0; }
+
+
+html {
+  font-size: 62.5%; /* 1.5rem = 15px */
+  -ms-text-size-adjust: 100%; /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+  -webkit-text-size-adjust: 100%; /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+  background-color: #000;
+}
+
+body {
+  font-size: 2.4rem;
+  line-height: 1.75;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+img.bg{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position:absolute;
+  left:0px;
+  top:0px;
+  z-index:-1;
+  opacity: 0.45;
+}
+#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #000; z-index:9999;}
+
+
+/* Content
+-------------------------------------------------- */
+.main-section {
+  width: 100%;
+  min-height: 100vh;
+
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.5) 25%, #0D0D0D 100%), url(../img/bg.jpg);
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .content {
+    margin: 0 auto;
+    max-width: 650px;
+    text-align: center;
+
+    h1 {
+      font-size: 1.5em;
+      font-family: 'Poiret One', serif;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+
+      i { opacity: 0.5; }
+    }
+
+    h2 {
+      font-size: 1em;
+      font-family: 'Raleway', sans-serif;
+      color: #fff;
+      font-weight: 300;
+      margin-bottom: 25px;
+    }
+
+    .bttn {
+      border: 1px solid white;
+
+      &:hover {
+        animation: flicker 0.5s ease;
+        background-color: white;
+
+        a { animation: flicker2 0.5s ease; color: #000; }
+      }
+
+      a {
+        color: #fff;
+        letter-spacing: 5px;
+        display: block;
+        font-size: 0.75em;
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: none;
+        padding: 10px 40px;
+      }
+    }
+  }
+}
+
+.social {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left:0; bottom:0;
+
+  a {
+    color: #fff;
+    opacity: 0.5;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.65em;
+    letter-spacing: 3px;
+
+    i { margin: 0 10px; }
+    &:hover { opacity: 1; }
+  }
+}
+
+
+
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* mobile */
+@media (max-width: 580px) {
+  body { font-size: 1.6rem !important; }
+  .main-section {
+    padding: 25px !important;
+    .content { max-width: 530px !important; }
+  }
+  .social{
+    padding: 10px 0;
+    a { font-size: 0.9em !important; }
+  }
+}
+
+/* tablet */
+@media (max-width: 750px) {
+  body { font-size: 1.8rem; }
+  .main-section {
+    padding: 0;
+    .content {
+      max-width: 500px;
+      a { font-weight: 400; opacity: 1; }
+    }
+  }
+}
+
+@keyframes flicker {
+  5%{background-color: transparent; }
+  15%{background-color: transparent; }
+  50%{background-color: transparent; }
+  90%{background-color: transparent; }
+}
+@keyframes flicker2 {
+  5%{color: transparent}
+  95%{color: transparent}
+  100%{color: #000; }
+}
